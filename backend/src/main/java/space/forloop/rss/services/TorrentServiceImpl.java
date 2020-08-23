@@ -41,16 +41,19 @@ public class TorrentServiceImpl implements TorrentService {
   }
 
   private Path getPath(final Item item) {
+
     return FileSystems.getDefault()
         .getPath(
             String.format("%s/%s.torrent", applicationProperties.getBlackHole(), item.getTitle()));
   }
 
   private String getDownloadLink(final Item item) {
+
     return item.getLink() == null ? item.getEnclosure().getUrl() : item.getLink();
   }
 
   private Flux<DataBuffer> executeRequest(final Item item) {
+
     final String downloadLink = getDownloadLink(item);
 
     return downloadLink.startsWith("magnet")

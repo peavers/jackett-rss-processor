@@ -29,4 +29,7 @@ public class ApplicationProperties {
    * trouble or blocked. 5 minutes is the default.
    */
   private int syncDelay;
+
+  /** Time value in minutes to cache requests between the frontend app and Jackett. */
+  private int localCache;
 }

@@ -14,6 +14,7 @@ public class WebClientConfig {
   /** Geared up to handle XML instead of JSON. it's like the 90s all over again. */
   @Bean
   public WebClient webClient() {
+
     return WebClient.builder()
         .exchangeStrategies(
             ExchangeStrategies.builder()

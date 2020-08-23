@@ -3,9 +3,10 @@ package space.forloop.rss.exceptions;
 
 public class MagnetException extends Exception {
 
-  private static final String message = "Magnet links are not yet supported";
+  private static final String message = "Magnet links are not supported";
 
   public MagnetException() {
+
     super(message);
   }
 }

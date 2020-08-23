@@ -28,13 +28,15 @@ public class ItemServiceImpl implements ItemService {
   }
 
   @Override
-  public Flux<Item> findByPattern(final Feed feed) {
+  public Flux<Item> findAllLocal() {
 
-    return jackettService
-        .getRemoteFeed(feed.getUrl())
-        .flatMapMany(jacketRoot -> Flux.fromIterable(jacketRoot.getChannel().getItem()))
-        .filterWhen(item -> filterMatches(feed, item))
-        .doOnNext(item -> item.setMatch(true));
+    return itemRepository.findAll();
+  }
+
+  @Override
+  public Mono<Item> save(final Item item) {
+
+    return itemRepository.save(item);
   }
 
   @Override
@@ -63,6 +65,7 @@ public class ItemServiceImpl implements ItemService {
 
   /** Remove items that have already been downloaded. */
   private Mono<Boolean> filterSnatches(final Item item) {
+
     return itemRepository.existsByGuid(item.getGuid()).map(b -> !b);
   }
 }

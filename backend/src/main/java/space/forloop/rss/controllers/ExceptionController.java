@@ -18,6 +18,7 @@ class ExceptionController {
     MagnetException.class
   })
   public ResponseEntity<String> entityNotFound() {
+
     log.info("Invalid request received");
 
     return ResponseEntity.badRequest().build();

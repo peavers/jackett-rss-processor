@@ -1,11 +1,12 @@
 spring:
   application:
-    name: rss-service
+    name: jackett-rss-process
 
 application:
   blackHole: "/tmp"
   max-results: 10
   sync-delay: 300000
+  local-cache: 1
 
 logging:
   level:
@@ -20,3 +21,4 @@ spring:
 application:
   blackHole: "/watched"
   max-results: 100
+  local-cache: 5

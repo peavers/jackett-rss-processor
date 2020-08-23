@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @XmlRootElement(name = "rss")
 public class JacketRoot {
+
   private Channel channel;
 
   private String version;

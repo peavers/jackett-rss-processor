@@ -16,6 +16,7 @@ public class ResourceWebFilter implements WebFilter {
    */
   @Override
   public Mono<Void> filter(final ServerWebExchange exchange, final WebFilterChain chain) {
+
     return exchange.getRequest().getURI().getPath().equals("/")
         ? chain.filter(
             exchange

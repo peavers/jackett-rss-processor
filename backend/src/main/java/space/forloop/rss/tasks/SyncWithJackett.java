@@ -4,7 +4,6 @@ package space.forloop.rss.tasks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import space.forloop.rss.repositories.ItemRepository;
 import space.forloop.rss.services.FeedService;
 import space.forloop.rss.services.ItemService;
 import space.forloop.rss.services.TorrentService;
@@ -19,10 +18,9 @@ public class SyncWithJackett {
 
   private final TorrentService torrentService;
 
-  private final ItemRepository itemRepository;
-
   @Scheduled(fixedDelayString = "${application.sync-delay}")
   public void sync() {
+
     feedService
         .findAll()
         .flatMap(
@@ -30,7 +28,7 @@ public class SyncWithJackett {
                 itemService
                     .findByPatternAndNotSnatched(feed)
                     .doOnNext(item -> item.setFeedId(feed.getId()))
-                    .flatMap(itemRepository::save)
+                    .flatMap(itemService::save)
                     .flatMap(torrentService::getTorrentFile))
         .subscribe();
   }

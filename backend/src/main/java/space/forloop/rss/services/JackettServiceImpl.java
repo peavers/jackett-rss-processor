@@ -15,6 +15,7 @@ public class JackettServiceImpl implements JackettService {
 
   @Override
   public Mono<JacketRoot> getRemoteFeed(final String uri) {
+
     return client.get().uri(uri).retrieve().bodyToMono(JacketRoot.class);
   }
 }

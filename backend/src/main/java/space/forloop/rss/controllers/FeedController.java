@@ -19,11 +19,13 @@ public class FeedController {
 
   @GetMapping
   public Flux<Feed> findAll() {
+
     return feedService.findAll();
   }
 
   @GetMapping("{feedId}")
   public Mono<Feed> findById(@PathVariable final String feedId) {
+
     return feedService.findById(feedId);
   }
 
@@ -40,6 +42,7 @@ public class FeedController {
 
   @DeleteMapping("{feedId}")
   public Mono<Void> deleteById(@PathVariable final String feedId) {
+
     return feedService.delete(feedId);
   }
 }
