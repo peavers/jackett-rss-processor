@@ -16,7 +16,7 @@ export class PatternListComponent implements OnInit, OnChanges {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  displayedColumns: string[] = ['displayName', 'regex', 'actions'];
+  displayedColumns: string[] = ['displayName', 'regex', 'enabled', 'actions'];
 
   dataSource = new MatTableDataSource();
 
