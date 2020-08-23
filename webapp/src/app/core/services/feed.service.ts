@@ -22,7 +22,7 @@ export class FeedService {
   constructor(private httpClient: HttpClient, private snackBar: MatSnackBar, private dialog: MatDialog) {
     this.endpoint = `${environment.api}/feeds`;
 
-    this.httpClient.get<Feed[]>(`${this.endpoint}`).subscribe((projects) => this.feeds$.next(projects));
+    this.httpClient.get<Feed[]>(`${this.endpoint}`).subscribe((feed: Feed[]) => this.feeds$.next(feed));
   }
 
   findAll(): Observable<Feed[]> {
@@ -33,44 +33,44 @@ export class FeedService {
     return this.httpClient.get<Feed>(`${this.endpoint}/${feedId}`);
   }
 
-  addFeed() {
+  addFeed(): void {
     const data: FeedDialogData = { feed: {} };
 
     this.dialog
       .open(FeedDialogComponent, { data: data })
       .afterClosed()
-      .subscribe((result) => {
-        if (result === undefined) return;
-
-        this.save(result);
-      });
-  }
-
-  editFeed(feed: Feed) {
-    const data: FeedDialogData = { feed: feed };
-
-    this.dialog
-      .open(FeedDialogComponent, { data: data })
-      .afterClosed()
-      .subscribe((result) => {
-        if (result === undefined) return;
+      .subscribe((feed) => {
+        if (feed === undefined) return;
 
         this.save(feed);
       });
   }
 
-  deleteFeed(feed: Feed) {
+  editFeed(feed: Feed): void {
+    const data: FeedDialogData = { feed: feed };
+
+    this.dialog
+      .open(FeedDialogComponent, { data: data })
+      .afterClosed()
+      .subscribe((feed) => {
+        if (feed === undefined) return;
+
+        this.save(feed);
+      });
+  }
+
+  deleteFeed(feed: Feed): void {
     this.dialog
       .open(ConfirmDialogComponent)
       .afterClosed()
-      .subscribe((result) => {
-        if (result) this.delete(feed);
+      .subscribe((shouldDelete) => {
+        if (shouldDelete) this.delete(feed);
       });
   }
 
   save(feed: Feed): void {
     this.httpClient.post<Feed>(`${this.endpoint}`, feed).subscribe((result: Feed) => {
-      if (!this.feeds$.value.some((f) => f.id === result.id)) {
+      if (!this.feeds$.value.some((f: Feed) => f.id === result.id)) {
         this.feeds$.next([...this.feeds$.value, result]);
       }
 
@@ -78,8 +78,8 @@ export class FeedService {
     });
   }
 
-  private delete(feed: Feed) {
-    this.feeds$.next([...this.feeds$.value.filter((p) => p.id != feed.id)]);
+  delete(feed: Feed): void {
+    this.feeds$.next([...this.feeds$.value.filter((f: Feed) => f.id != feed.id)]);
     this.httpClient.delete(`${this.endpoint}/${feed.id}`).subscribe();
 
     this.snackBar.open('Deleted feed');

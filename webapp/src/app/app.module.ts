@@ -8,8 +8,6 @@ import { ContentLayoutComponent } from './layout/content-layout/content-layout.c
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SharedModule } from './shared';
 import { MaterialModule } from './shared/material.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
@@ -17,11 +15,6 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
   declarations: [AppComponent, ContentLayoutComponent, NavbarComponent],
   imports: [AppRoutingModule, BrowserAnimationsModule, BrowserModule, MaterialModule, SharedModule],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true,
-    },
     {
       provide: MAT_DIALOG_DEFAULT_OPTIONS,
       useValue: {
