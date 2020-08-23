@@ -10,6 +10,8 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'com.github.ben-manes.caffeine:caffeine'
 
 	implementation "javax.xml.bind:jaxb-api:2.3.1"
 	implementation "com.sun.xml.bind:jaxb-core:2.3.0.1"

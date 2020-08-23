@@ -7,6 +7,12 @@ application:
   max-results: 10
   sync-delay: 300000
 
+logging:
+  level:
+    org:
+      springframework:
+        cache: TRACE
+
 ---
 spring:
   profiles: production

@@ -11,6 +11,8 @@ import space.forloop.rss.services.FeedService;
 import space.forloop.rss.services.ItemService;
 import space.forloop.rss.services.TorrentService;
 
+import java.time.Duration;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/items")
@@ -26,7 +28,7 @@ public class ItemController {
   @GetMapping("{feedId}")
   @Cacheable(cacheNames = "items")
   public Flux<Item> findAll(@PathVariable final String feedId) {
-    return feedService.findById(feedId).flatMapMany(itemService::findAll);
+    return feedService.findById(feedId).flatMapMany(itemService::findAll).cache(Duration.ofMinutes(5));
   }
 
   @PostMapping
