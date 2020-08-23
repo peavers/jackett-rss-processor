@@ -35,4 +35,8 @@ export class NavbarComponent implements OnInit {
   addFeed() {
     this.feedService.addFeed();
   }
+
+  goToGitHub() {
+    window.open('https://github.com/peavers/jackett-rss-processor', '_blank');
+  }
 }
