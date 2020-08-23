@@ -8,6 +8,8 @@
       Feeds <mat-icon [inline]="true" style="margin-top: -1px;">expand_more</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="addFeed()">Add new feed</button>
+      <mat-divider></mat-divider>
       <button mat-menu-item *ngFor="let feed of feeds" [routerLink]="'/feeds/' + feed.id">
         {{ feed.displayName }}
       </button>

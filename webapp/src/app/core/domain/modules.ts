@@ -2,17 +2,14 @@ export interface Feed {
   id?: string;
   displayName?: string;
   url?: string;
-  createdDate?: number;
   patterns?: Pattern[];
-  cachedItems?: Item[];
 }
 
 export interface Pattern {
   id?: string;
-  isEnabled?: boolean;
+  enabled?: boolean;
   displayName?: string;
   regex?: string;
-  testEndpoint?: string;
 }
 
 export interface Item {
@@ -21,22 +18,6 @@ export interface Item {
   pubDate?: string;
   guid?: string;
   match?: boolean;
-}
-
-export interface Channel {
-  link?: string;
-  description?: string;
-  language?: string;
-  title?: string;
-  category?: string;
-  image?: Image;
-}
-
-export interface Image {
-  link?: string;
-  description?: string;
-  title?: string;
-  url?: string;
 }
 
 export interface Option {

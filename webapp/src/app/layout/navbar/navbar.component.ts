@@ -31,4 +31,8 @@ export class NavbarComponent implements OnInit {
   themeChangeHandler(themeToSet) {
     this.themeService.setTheme(themeToSet);
   }
+
+  addFeed() {
+    this.feedService.addFeed();
+  }
 }

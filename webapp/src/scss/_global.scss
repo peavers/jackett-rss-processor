@@ -2,9 +2,4 @@ html,
 body {
   height: 100%;
   margin: 0;
-  width: 100vw; // Some weird bug where sometimes there is a ~20px gap on the right of the application
-}
-
-*:focus {
-  outline: none;
 }
