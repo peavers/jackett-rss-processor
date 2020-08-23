@@ -2,6 +2,7 @@
 package space.forloop.rss.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -23,6 +24,7 @@ public class ItemController {
   private final FeedService feedService;
 
   @GetMapping("{feedId}")
+  @Cacheable(cacheNames = "items")
   public Flux<Item> findAll(@PathVariable final String feedId) {
     return feedService.findById(feedId).flatMapMany(itemService::findAll);
   }
