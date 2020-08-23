@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <div *ngIf="feeds$ | async as feeds">
+    <button mat-button [matMenuTriggerFor]="menu">
+      Feeds <mat-icon [inline]="true" style="margin-top: -1px;">expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let feed of feeds" [routerLink]="'/feeds/' + feed.id">
+        {{ feed.displayName }}
+      </button>
+    </mat-menu>
+  </div>
+
+  <button mat-button routerLink="/snatches">Snatches</button>
+
+  <span class="spacer"></span>
+
+  <app-theme-switcher [options]="options$ | async" (themeChange)="themeChangeHandler($event)"></app-theme-switcher>
+</mat-toolbar>

@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="match">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Matched</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon *ngIf="element.match" matTooltip="Matches a pattern" class="padding-5px">done</mat-icon>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="size">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Size</th>
+    <td mat-cell *matCellDef="let element">{{ element.size | fileSize }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="pubDate">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Published</th>
+    <td mat-cell *matCellDef="let element">{{ element.pubDate | amTimeAgo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button class="is-pulled-right" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="goTo(element.guid)">View on {{ feed.displayName }}</button>
+        <button mat-menu-item (click)="downloadTorrent(element)">Send to blackhole</button>
+      </mat-menu>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

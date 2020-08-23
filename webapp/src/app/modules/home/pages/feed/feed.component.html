@@ -1,0 +1,25 @@
+<div *ngIf="feed$ | async as feed">
+  <div class="section">
+    <div class="container is-fluid">
+      <div class="columns is-multiline">
+        <h1 class="mat-title">{{ feed.displayName }} patterns</h1>
+        <div class="column is-12">
+          <app-pattern-list [feed]="feed" [patterns]="feed.patterns"></app-pattern-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container is-fluid">
+      <div class="columns is-multiline">
+        <h1 class="mat-title">Items</h1>
+        <div class="column is-12">
+          <app-item-list [feed]="feed"></app-item-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-action-button (clickedEvent)="addPattern(feed)" [tooltip]="'Add new Pattern'"></app-action-button>
+</div>

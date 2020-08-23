@@ -1,0 +1,12 @@
+<div class="section">
+  <div class="container is-fluid">
+    <div class="columns is-multiline">
+      <h1 class="mat-title">Feeds</h1>
+      <div class="column is-12">
+        <app-feed-list></app-feed-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-action-button (clickedEvent)="addFeed()" [tooltip]="'Add RSS feed'"></app-action-button>

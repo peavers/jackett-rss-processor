@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Add Jackett RSS Feed</h1>
+
+<div mat-dialog-content>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Jackett RSS Feed</mat-label>
+      <input matInput [(ngModel)]="feed.url" autocomplete="off" />
+      <mat-hint>Use the "Copy RSS Feed" button in Jackett</mat-hint>
+    </mat-form-field>
+  </p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="feed" color="primary">
+    Save
+  </button>
+</div>

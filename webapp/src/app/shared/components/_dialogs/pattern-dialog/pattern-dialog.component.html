@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Pattern match</h1>
+
+<div mat-dialog-content>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Display name</mat-label>
+      <input matInput [(ngModel)]="pattern.displayName" autocomplete="off" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Regex</mat-label>
+      <input matInput [(ngModel)]="pattern.regex" autocomplete="off" />
+    </mat-form-field>
+  </p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="pattern" color="primary">
+    Save
+  </button>
+</div>

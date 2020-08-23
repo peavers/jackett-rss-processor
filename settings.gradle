@@ -1,0 +1,4 @@
+rootProject.name = 'rss-service'
+
+include 'backend'
+include 'webapp'

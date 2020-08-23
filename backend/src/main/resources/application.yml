@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: rss-service
+
+application:
+  blackHole: "/tmp"
+  max-results: 10
+  sync-delay: 300000
+
+---
+spring:
+  profiles: production
+
+application:
+  blackHole: "/watched"
+  max-results: 100

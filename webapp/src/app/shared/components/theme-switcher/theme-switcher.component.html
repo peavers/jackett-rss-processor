@@ -1,0 +1,8 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Select a theme">
+  <mat-icon>format_color_fill</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button *ngFor="let option of options" mat-menu-item (click)="changeTheme(option.value)">
+      <span>{{ option.label }}</span>
+    </button>
+  </mat-menu>
+</button>
