@@ -1,12 +1,28 @@
 <table mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="displayName">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
-    <td class="is-editable" mat-cell *matCellDef="let element" (click)="goTo(element)">{{ element.displayName }}</td>
+    <td
+      class="is-editable"
+      [ngClass]="{ 'blurry-text': blur }"
+      mat-cell
+      *matCellDef="let element"
+      (click)="goTo(element)"
+    >
+      {{ element.displayName }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="url">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>URL</th>
-    <td class="is-editable" mat-cell *matCellDef="let element" (click)="goTo(element)">{{ element.url }}</td>
+    <td
+      class="is-editable"
+      [ngClass]="{ 'blurry-text': blur }"
+      mat-cell
+      *matCellDef="let element"
+      (click)="goTo(element)"
+    >
+      {{ element.url }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">

@@ -2,7 +2,7 @@
   <div class="section">
     <div class="container is-fluid">
       <div class="columns is-multiline">
-        <h1 class="mat-title">{{ feed.displayName }} patterns</h1>
+        <h1 class="mat-title" [ngClass]="{ 'blurry-text': blur }">{{ feed.displayName }} patterns</h1>
         <div class="column is-12">
           <app-pattern-list [feed]="feed" [patterns]="feed.patterns"></app-pattern-list>
         </div>

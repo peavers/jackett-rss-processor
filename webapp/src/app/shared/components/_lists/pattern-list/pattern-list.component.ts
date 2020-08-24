@@ -3,6 +3,7 @@ import { Feed, Pattern } from '../../../../core/domain/modules';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PatternService } from '../../../../core/services/pattern.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-pattern-list',
@@ -20,7 +21,11 @@ export class PatternListComponent implements OnInit, OnChanges {
 
   dataSource = new MatTableDataSource();
 
-  constructor(private patternService: PatternService) {}
+  blur: boolean;
+
+  constructor(private patternService: PatternService) {
+    this.blur = environment.blur;
+  }
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;

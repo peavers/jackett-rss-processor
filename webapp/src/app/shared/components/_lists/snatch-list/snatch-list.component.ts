@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { SnatchService } from '../../../../core/services/snatch.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-snatch-list',
@@ -19,7 +20,11 @@ export class SnatchListComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
-  constructor(private snatchService: SnatchService) {}
+  blur: boolean;
+
+  constructor(private snatchService: SnatchService) {
+    this.blur = environment.blur;
+  }
 
   ngOnInit(): void {
     this.subscriptions.push(

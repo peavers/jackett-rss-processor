@@ -1,14 +1,26 @@
 <table mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="displayName">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
-    <td class="is-editable" mat-cell *matCellDef="let element" (click)="editPattern(feed, element)">
+    <td
+      class="is-editable"
+      [ngClass]="{ 'blurry-text': blur }"
+      mat-cell
+      *matCellDef="let element"
+      (click)="editPattern(feed, element)"
+    >
       {{ element.displayName }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="regex">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>Regex</th>
-    <td class="is-editable" mat-cell *matCellDef="let element" (click)="editPattern(feed, element)">
+    <td
+      class="is-editable"
+      [ngClass]="{ 'blurry-text': blur }"
+      mat-cell
+      *matCellDef="let element"
+      (click)="editPattern(feed, element)"
+    >
       {{ element.regex }}
     </td>
   </ng-container>

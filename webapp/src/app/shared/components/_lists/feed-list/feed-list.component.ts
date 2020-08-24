@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-feed-list',
@@ -21,7 +22,11 @@ export class FeedListComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
-  constructor(private feedService: FeedService, private dialog: MatDialog, private router: Router) {}
+  blur: boolean;
+
+  constructor(private feedService: FeedService, private dialog: MatDialog, private router: Router) {
+    this.blur = environment.blur;
+  }
 
   ngOnInit(): void {
     this.feedService.findAll().subscribe((feeds: Feed[]) => {

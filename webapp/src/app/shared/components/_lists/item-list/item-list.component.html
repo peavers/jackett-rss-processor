@@ -8,7 +8,7 @@
 
   <ng-container matColumnDef="title">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>Title</th>
-    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    <td [ngClass]="{ 'blurry-text': blur }" mat-cell *matCellDef="let element">{{ element.title }}</td>
   </ng-container>
 
   <ng-container matColumnDef="size">

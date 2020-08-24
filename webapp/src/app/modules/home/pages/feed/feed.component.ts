@@ -4,6 +4,7 @@ import { Feed } from '../../../../core/domain/modules';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { PatternService } from '../../../../core/services/pattern.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-feed',
@@ -13,11 +14,11 @@ import { PatternService } from '../../../../core/services/pattern.service';
 export class FeedComponent implements OnInit {
   feed$: Observable<Feed> = new Observable<Feed>();
 
-  constructor(
-    private route: ActivatedRoute,
-    private feedService: FeedService,
-    private patternService: PatternService
-  ) {}
+  blur: boolean;
+
+  constructor(private route: ActivatedRoute, private feedService: FeedService, private patternService: PatternService) {
+    this.blur = environment.blur;
+  }
 
   ngOnInit() {
     this.route.params.subscribe((response) => {
