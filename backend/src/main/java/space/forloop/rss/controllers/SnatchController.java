@@ -12,6 +12,7 @@ import reactor.core.publisher.Flux;
 import space.forloop.rss.domain.jackett.Item;
 import space.forloop.rss.properties.ApplicationProperties;
 import space.forloop.rss.services.ItemService;
+import space.forloop.rss.utils.DateUtils;
 
 @CrossOrigin
 @RestController
@@ -29,6 +30,7 @@ public class SnatchController {
 
     return itemService
         .findAllLocal()
+        .sort(DateUtils.sortItems())
         .cache(Duration.ofMinutes(applicationProperties.getLocalCache()));
   }
 }

@@ -12,6 +12,7 @@ import space.forloop.rss.properties.ApplicationProperties;
 import space.forloop.rss.services.FeedService;
 import space.forloop.rss.services.ItemService;
 import space.forloop.rss.services.TorrentService;
+import space.forloop.rss.utils.DateUtils;
 
 @CrossOrigin
 @RestController
@@ -34,6 +35,7 @@ public class ItemController {
     return feedService
         .findById(feedId)
         .flatMapMany(itemService::findAll)
+        .sort(DateUtils.sortItems())
         .cache(Duration.ofMinutes(applicationProperties.getLocalCache()));
   }
 
