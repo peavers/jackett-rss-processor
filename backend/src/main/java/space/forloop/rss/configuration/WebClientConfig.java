@@ -19,7 +19,7 @@ public class WebClientConfig {
         .exchangeStrategies(
             ExchangeStrategies.builder()
                 .codecs(
-                    (configurer) -> {
+                    configurer -> {
                       configurer.defaultCodecs().jaxb2Encoder(new Jaxb2XmlEncoder());
                       configurer.defaultCodecs().jaxb2Decoder(new Jaxb2XmlDecoder());
                     })
