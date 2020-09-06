@@ -1,4 +1,4 @@
-name: "Code scanning - action"
+name: CodeQL
 
 on:
   push:
@@ -8,30 +8,23 @@ on:
 
 jobs:
   CodeQL-Build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
-
-    - run: git checkout HEAD^2
-      if: ${{ github.event_name == 'pull_request' }}
-
-    - name: Setup Java JDK
-      uses: actions/setup-java@v1.3.0
-      with:
-        java-version: 11
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-       languages: java
-
-    - run: |
-       ./gradlew build
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - run: git checkout HEAD^2
+        if: ${{ github.event_name == 'pull_request' }}
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.3.0
+        with:
+          java-version: 11
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: java
+      - run: |
+          ./gradlew build
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1

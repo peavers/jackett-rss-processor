@@ -1,7 +1,17 @@
 version: 2
 updates:
-- package-ecosystem: gradle
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 100
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
+  - package-ecosystem: gradle
+    directory: "/backend"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
+  - package-ecosystem: npm
+    directory: "/webapp"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
