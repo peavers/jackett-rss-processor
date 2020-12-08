@@ -17,6 +17,9 @@ logging:
 ---
 spring:
   profiles: production
+  data:
+    mongodb:
+      host: jackett-rss-mongo
 
 application:
   blackHole: "/watched"
