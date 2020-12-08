@@ -10,22 +10,6 @@ services:
         max-size: "2m"
         max-file: "5"
 
-  jackett-rss-processor:
-    image: peavers/jackett-rss-processor:latest
-    container_name: jackett-rss-processor
-    restart: unless-stopped
-    ports:
-      - 8080:8080
-    volumes:
-      - ${WATCH_DIRECTORY}:/watched
-    depends_on:
-      - jackett
-      - jackett-rss-mongo
-    logging:
-      options:
-        max-size: "2m"
-        max-file: "5"
-
   jackett-rss-mongo:
     image: mongo:latest
     container_name: jackett-rss-mongo
