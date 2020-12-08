@@ -1,7 +1,6 @@
 # Jackett Torrent Processor
 ![Release](https://github.com/peavers/jackett-rss-processor/workflows/Release/badge.svg)
 ![Super Linter](https://github.com/peavers/jackett-rss-processor/workflows/Super%20Linter/badge.svg)
-![CodeQL](https://github.com/peavers/jackett-rss-processor/workflows/CodeQL/badge.svg)
 
 A very simple RSS -> Blackhole web application 
 
