@@ -23,6 +23,9 @@ dependencies {
 }
 
 jib {
+	from {
+		image = 'adoptopenjdk/openjdk15:jdk-15.0.2_7-alpine'
+	}
 	to {
 		image = 'peavers/jackett-rss-processor'
 		auth {
@@ -34,6 +37,6 @@ jib {
 	container {
 		jvmFlags = ['-Dspring.profiles.active=production', '-XX:+UseContainerSupport', '-Dserver.port=8080', '-Dfile.encoding=UTF-8']
 		ports = ['8080']
-		labels = [maintainer: 'Chris Turner<chris@codacy.com>']
+		labels = [maintainer: 'Chris Turner<chris@forloop.space>']
 	}
 }
