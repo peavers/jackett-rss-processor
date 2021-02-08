@@ -10,6 +10,12 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 99
+    ignore:
+      - dependency-name: "com.sun.xml.bind:jaxb-impl"
+        versions: [ "3.x" ]
+      - dependency-name: "com.sun.xml.bind:jaxb-core"
+        versions: [ "3.x" ]
+
   - package-ecosystem: npm
     directory: "/jackett-rss-processor-frontend"
     schedule:
