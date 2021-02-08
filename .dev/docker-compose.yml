@@ -1,19 +1,12 @@
 version: '3.7'
 services:
 
-  jackett:
-    container_name: jackett
-    image: linuxserver/jackett:latest
-    restart: unless-stopped
-    logging:
-      options:
-        max-size: "2m"
-        max-file: "5"
-
   jackett-rss-mongo:
     image: mongo:latest
     container_name: jackett-rss-mongo
     restart: unless-stopped
+    ports:
+      - "27017:27017"
     volumes:
       - mongo-data:/data/db
     logging:
