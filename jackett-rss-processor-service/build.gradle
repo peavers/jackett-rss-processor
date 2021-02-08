@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-	compile project(':webapp')
+	compile project(':jackett-rss-processor-frontend')
 
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'

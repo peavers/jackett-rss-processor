@@ -1,4 +1,4 @@
-rootProject.name = 'rss-service'
+rootProject.name = 'jackett-rss-processor'
 
-include 'backend'
-include 'webapp'
+include 'jackett-rss-processor-service'
+include 'jackett-rss-processor-frontend'
