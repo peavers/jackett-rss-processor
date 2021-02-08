@@ -1,17 +1,17 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: "/"
+    directory: "/.github"
     schedule:
       interval: daily
     open-pull-requests-limit: 99
   - package-ecosystem: gradle
-    directory: "/backend"
+    directory: "/jackett-rss-processor-service"
     schedule:
       interval: daily
     open-pull-requests-limit: 99
   - package-ecosystem: npm
-    directory: "/webapp"
+    directory: "/jackett-rss-processor-frontend"
     schedule:
       interval: daily
     open-pull-requests-limit: 99
