@@ -33,6 +33,8 @@ services:
     restart: unless-stopped
     ports:
       - 8080:8080
+    environment:
+      - SPRING_DATA_MONGODB_HOST=jackett-rss-mongo
     volumes:
       - ${WATCH_DIRECTORY}:/watched
     depends_on:
