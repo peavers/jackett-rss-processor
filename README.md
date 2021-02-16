@@ -59,6 +59,3 @@ services:
 volumes:
   mongo-data:
 ```
-## Screenshots
-<img src="https://github.com/peavers/jackett-rss-processor/blob/master/jackett-rss-processor-frontend/.screenshots/add-new-feed-purple.png?raw=true" width="100%">
-<img src="https://github.com/peavers/jackett-rss-processor/blob/master/jackett-rss-processor-frontend/.screenshots/pattern-edit-purple.png?raw=true" width="100%">
