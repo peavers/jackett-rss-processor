@@ -11,6 +11,12 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 99
+
+  - package-ecosystem: gradle
+    directory: "/jackett-rss-processor-service"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
     ignore:
       - dependency-name: "com.sun.xml.bind:*"
 
