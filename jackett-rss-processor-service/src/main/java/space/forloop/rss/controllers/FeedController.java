@@ -32,7 +32,7 @@ public class FeedController {
   @PostMapping
   public Mono<Feed> save(@RequestBody final Feed feed) {
 
-    return StringUtils.isEmpty(feed.getDisplayName())
+    return StringUtils.hasText(feed.getDisplayName())
         ? feedService
             .findChannel(feed)
             .doOnNext(channel -> feed.setDisplayName(channel.getTitle()))

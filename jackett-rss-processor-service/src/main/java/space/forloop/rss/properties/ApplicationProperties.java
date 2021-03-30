@@ -31,5 +31,5 @@ public class ApplicationProperties {
   private int syncDelay;
 
   /** Time value in minutes to cache requests between the frontend app and Jackett. */
-  private int localCache;
+  private int cacheDuration;
 }

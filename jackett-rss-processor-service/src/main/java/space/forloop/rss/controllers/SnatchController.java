@@ -31,6 +31,6 @@ public class SnatchController {
     return itemService
         .findAllLocal()
         .sort(DateUtils.sortItems())
-        .cache(Duration.ofMinutes(applicationProperties.getLocalCache()));
+        .cache(Duration.ofMinutes(applicationProperties.getCacheDuration()));
   }
 }
