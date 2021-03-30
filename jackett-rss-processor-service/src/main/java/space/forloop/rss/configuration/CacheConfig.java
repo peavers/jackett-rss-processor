@@ -16,18 +16,16 @@ import space.forloop.rss.properties.ApplicationProperties;
 @RequiredArgsConstructor
 public class CacheConfig {
 
-  private final ApplicationProperties applicationProperties;
+  private final ApplicationProperties appProperties;
 
   @Bean
-  public Caffeine caffeineConfig() {
-
+  public Caffeine<Object, Object> caffeineConfig() {
     return Caffeine.newBuilder()
-        .expireAfterWrite(applicationProperties.getLocalCache(), TimeUnit.MINUTES);
+        .expireAfterWrite(appProperties.getCacheDuration(), TimeUnit.MINUTES);
   }
 
   @Bean
-  public CacheManager cacheManager(final Caffeine caffeine) {
-
+  public CacheManager cacheManager(final Caffeine<Object, Object> caffeine) {
     final CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager();
     caffeineCacheManager.setCaffeine(caffeine);
 

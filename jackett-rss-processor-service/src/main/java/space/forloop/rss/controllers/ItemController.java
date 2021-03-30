@@ -36,7 +36,7 @@ public class ItemController {
         .findById(feedId)
         .flatMapMany(itemService::findAll)
         .sort(DateUtils.sortItems())
-        .cache(Duration.ofMinutes(applicationProperties.getLocalCache()));
+        .cache(Duration.ofMinutes(applicationProperties.getCacheDuration()));
   }
 
   @PostMapping
