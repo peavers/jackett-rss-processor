@@ -2,7 +2,7 @@ name: Release
 
 on:
   workflow_run:
-    workflows: ["Build"]
+    workflows: ["Tag"]
     branches: [master]
     types:
       - completed
