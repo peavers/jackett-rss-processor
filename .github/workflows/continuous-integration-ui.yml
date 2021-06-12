@@ -1,0 +1,44 @@
+on:
+  push:
+    paths:
+      - 'jackett-rss-processor-ui/**'
+  pull_request:
+    paths:
+      - 'jackett-rss-processor-ui/**'
+
+name: Continuous-integration-ui
+
+jobs:
+  check:
+    name: Build and analyze
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST: ${{ secrets.SONAR_HOST }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Using Node 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.sonar/cache
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Analyze
+        working-directory: ./jackett-rss-processor-ui
+        run: |
+          npm install
+          npm run build
+          npm run sonar

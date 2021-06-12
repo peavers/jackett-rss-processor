@@ -1,0 +1,53 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.google.cloud.tools.jib'
+apply plugin: 'com.palantir.git-version'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.diffplug.spotless'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':jackett-rss-processor-ui')
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'com.github.ben-manes.caffeine:caffeine'
+
+    implementation "javax.xml.bind:jaxb-api:2.3.1"
+    implementation "com.sun.xml.bind:jaxb-core:2.3.0.1"
+    implementation "com.sun.xml.bind:jaxb-impl:2.3.0.1"
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+}
+
+spotless {
+    java {
+        removeUnusedImports()
+        googleJavaFormat()
+    }
+}
+
+try {
+    jib {
+        from {
+            image = 'adoptopenjdk/openjdk15:jdk-15.0.2_7-alpine'
+        }
+        to {
+            image = 'peavers/jackett-rss-processor'
+            auth {
+                username = System.getenv("DOCKER_USER")
+                password = System.getenv("DOCKER_PASS")
+            }
+            tags = ["latest", gitVersion()]
+        }
+    }
+} catch (Exception ignored) {
+
+}
