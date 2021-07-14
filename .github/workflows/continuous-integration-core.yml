@@ -17,6 +17,8 @@ jobs:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST: ${{ secrets.SONAR_HOST }}
 
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
