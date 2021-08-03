@@ -27,7 +27,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "ngx-moment": "^5.0.0",
     "ngx-webstorage-service": "^4.1.0",
-    "rxjs": "~7.1.0",
+    "rxjs": "~7.3.0",
     "sonarqube-scanner": "^2.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
