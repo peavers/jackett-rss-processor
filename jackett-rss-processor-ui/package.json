@@ -44,7 +44,7 @@
     "sort-package-json": "^1.52.0",
     "stylelint": "^14.0.0",
     "stylelint-config-standard": "^23.0.0",
-    "stylelint-order": "^4.1.0",
+    "stylelint-order": "^5.0.0",
     "stylelint-scss": "^3.21.0",
     "ts-node": "~10.4.0",
     "tslint": "~6.1.0",
