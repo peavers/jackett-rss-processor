@@ -41,7 +41,7 @@
     "postcss": "^8.3.11",
     "prettier": "2.4.1",
     "protractor": "~7.0.0",
-    "sort-package-json": "^1.52.0",
+    "sort-package-json": "^1.53.1",
     "stylelint": "^14.0.1",
     "stylelint-config-standard": "^23.0.0",
     "stylelint-order": "^5.0.0",
