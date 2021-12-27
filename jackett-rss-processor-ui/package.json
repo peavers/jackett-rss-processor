@@ -26,7 +26,7 @@
     "bulma": "^0.9.3",
     "jest-sonar-reporter": "^2.0.0",
     "ngx-moment": "^6.0.2",
-    "ngx-webstorage-service": "^4.1.0",
+    "ngx-webstorage-service": "^5.0.0",
     "rxjs": "~7.4.0",
     "sonarqube-scanner": "^2.8.1",
     "tslib": "^2.3.1",
