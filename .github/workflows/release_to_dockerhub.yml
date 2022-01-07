@@ -43,7 +43,7 @@ jobs:
 
       - name: Build changelog
         id: build_changelog
-        uses: mikepenz/release-changelog-builder-action@v2.7.1
+        uses: mikepenz/release-changelog-builder-action@v2.7.2
 
       - name: Publish
         run: ./gradlew jib
