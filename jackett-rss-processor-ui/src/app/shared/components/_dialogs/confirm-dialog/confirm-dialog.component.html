@@ -2,16 +2,12 @@
 
 <div mat-dialog-content>
   <div class="columns is-multiline">
-    <div class="column is-12">
-      This will delete it forever.
-    </div>
+    <div class="column is-12">This will delete it forever.</div>
   </div>
 </div>
 
 <div mat-dialog-actions>
   <button (click)="onNoClick()" mat-button>Cancel</button>
 
-  <button (click)="submit()" [mat-dialog-close]="true" mat-raised-button color="warn">
-    Delete
-  </button>
+  <button (click)="submit()" [mat-dialog-close]="true" mat-raised-button color="warn">Delete</button>
 </div>
