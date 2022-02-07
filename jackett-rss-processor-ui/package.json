@@ -7,8 +7,8 @@
     "clean": "npx sort-package-json && npx prettier --write . && npx stylelint **/*.scss --fix",
     "lint": "ng lint",
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.config.json",
     "sonar": "node sonar-project.js",
+    "start": "ng serve --proxy-config proxy.config.json",
     "test": "ng test"
   },
   "dependencies": {
