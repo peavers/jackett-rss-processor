@@ -4,7 +4,7 @@ plugins {
     id 'com.google.cloud.tools.jib' version '3.2.0' apply false
     id 'com.diffplug.spotless' version '6.3.0'
     id 'org.sonarqube' version '3.3'
-    id 'com.palantir.git-version' version '0.13.0'
+    id 'com.palantir.git-version' version '0.14.0'
     id 'application'
     id 'java'
 }
