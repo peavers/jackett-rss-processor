@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Using Java 15
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: adopt
           java-version: 15
