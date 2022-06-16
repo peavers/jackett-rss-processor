@@ -30,7 +30,7 @@
     "rxjs": "~7.5.5",
     "sonarqube-scanner": "^2.8.1",
     "tslib": "^2.4.0",
-    "zone.js": "~0.11.5"
+    "zone.js": "~0.11.6"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~14.0.2",
