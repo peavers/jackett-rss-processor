@@ -14,7 +14,6 @@ repositories {
 
 mainClassName = 'space.forloop.rss.Application'
 sourceCompatibility=17
-targetCompatibility=17
 
 jar {
     enabled = false
