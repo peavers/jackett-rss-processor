@@ -37,7 +37,7 @@ spotless {
 try {
     jib {
         from {
-            image = 'adoptopenjdk/openjdk15:jdk-15.0.2_7-alpine'
+            image = 'amazoncorretto:17-alpine'
         }
         to {
             image = 'peavers/jackett-rss-processor'

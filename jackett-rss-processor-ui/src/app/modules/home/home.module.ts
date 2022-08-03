@@ -6,9 +6,8 @@ import { FeedComponent } from './pages/feed/feed.component';
 import { SnatchComponent } from './pages/snatch/snatch.component';
 
 @NgModule({
-  declarations: [DefaultComponent, FeedComponent, SnatchComponent],
-  imports: [SharedModule, RoutingModule],
-  exports: [],
-  entryComponents: [],
+    declarations: [DefaultComponent, FeedComponent, SnatchComponent],
+    imports: [SharedModule, RoutingModule],
+    exports: []
 })
 export class HomeModule {}
