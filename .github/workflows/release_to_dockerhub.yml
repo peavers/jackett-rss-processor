@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
 
       - name: Bump version
-        uses: anothrNick/github-tag-action@1.38.0
+        uses: anothrNick/github-tag-action@1.39.0
         env:
           WITH_V: true
 
