@@ -26,7 +26,7 @@
     "ngx-moment": "^6.0.2",
     "ngx-webstorage-service": "^5.0.0",
     "rxjs": "~7.5.7",
-    "tslib": "^2.4.0",
+    "tslib": "^2.4.1",
     "zone.js": "~0.11.8"
   },
   "devDependencies": {
