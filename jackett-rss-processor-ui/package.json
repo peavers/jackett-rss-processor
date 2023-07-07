@@ -39,7 +39,7 @@
     "prettier": "3.0.0",
     "protractor": "~7.0.0",
     "sort-package-json": "^2.5.0",
-    "stylelint": "^14.16.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.0.1",
