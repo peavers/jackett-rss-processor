@@ -35,7 +35,7 @@
     "@angular/compiler-cli": "~14.1.0",
     "@types/node": "^20.6.2",
     "codelyzer": "^6.0.2",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "prettier": "3.0.3",
     "protractor": "~7.0.0",
     "sort-package-json": "^2.5.1",
