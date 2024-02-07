@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: Using Node 14
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: 14
 
