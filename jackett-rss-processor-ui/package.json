@@ -33,7 +33,7 @@
     "@angular-devkit/build-angular": "~18.2.0",
     "@angular/cli": "~18.2.0",
     "@angular/compiler-cli": "~14.1.0",
-    "@types/node": "^22.4.1",
+    "@types/node": "^22.5.0",
     "codelyzer": "^6.0.2",
     "postcss": "^8.4.41",
     "prettier": "3.3.3",
