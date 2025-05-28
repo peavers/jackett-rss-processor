@@ -20,7 +20,7 @@
     "@angular/material": "^19.2.18",
     "@angular/platform-browser": "~19.2.14",
     "@angular/platform-browser-dynamic": "~19.2.14",
-    "@angular/router": "~19.2.13",
+    "@angular/router": "~19.2.14",
     "angular-moment": "^1.3.0",
     "bulma": "^1.0.4",
     "ngx-moment": "^6.0.2",
