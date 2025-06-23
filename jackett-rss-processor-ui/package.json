@@ -36,7 +36,7 @@
     "@types/node": "^24.0.3",
     "codelyzer": "^6.0.2",
     "postcss": "^8.5.6",
-    "prettier": "3.5.3",
+    "prettier": "3.6.0",
     "protractor": "~7.0.0",
     "sort-package-json": "^3.2.1",
     "stylelint": "^16.21.0",
