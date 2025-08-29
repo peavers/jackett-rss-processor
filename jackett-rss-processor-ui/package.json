@@ -11,7 +11,7 @@
     "test": "ng test"
   },
   "dependencies": {
-    "@angular/animations": "~20.2.1",
+    "@angular/animations": "~20.2.3",
     "@angular/cdk": "~20.2.1",
     "@angular/common": "~20.2.1",
     "@angular/compiler": "~20.2.2",
