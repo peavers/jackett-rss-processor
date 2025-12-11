@@ -32,7 +32,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~21.0.2",
     "@angular/cli": "~21.0.2",
-    "@angular/compiler-cli": "~21.0.3",
+    "@angular/compiler-cli": "~21.0.4",
     "@types/node": "^24.10.2",
     "codelyzer": "^6.0.2",
     "postcss": "^8.5.6",
